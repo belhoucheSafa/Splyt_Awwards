@@ -39,7 +39,7 @@ const HeroSection = () => {
         scrollTrigger : {
             trigger : ".hero-container",
             start : "1% top",
-            markers: true,
+            // markers: true,
             end:"bottom top",
             scrub : true
         }
