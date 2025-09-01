@@ -11,15 +11,34 @@ const FlavorTitle = () => {
       type: "chars",
     });
     gsap.from(firstTextSplit.chars, {
-        yPercent:200,
-        ease:"power1.inOut",
-        stagger:0.02,
-        scrollTrigger:{
-            trigger:".flavor-section",
-            start:"top 30%",
-            markers:true
-        }
-    })
+      yPercent: 200,
+      ease: "power1.inOut",
+      stagger: 0.02,
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 30%",
+      },
+    });
+
+    gsap.to(".flavor-text-scroll", {
+      duration: 1,
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 10%",
+
+      },
+    });
+    gsap.from(secondTextSplit.chars, {
+      yPercent: 200,
+      ease: "power1.inOut",
+      stagger: 0.02,
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top 1%",
+
+      },
+    });
   });
 
   return (
@@ -29,11 +48,9 @@ const FlavorTitle = () => {
       </div>
 
       <div
-        style={
-          {
-            // clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
-          }
-        }
+        style={{
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
         className="flavor-text-scroll"
       >
         <div className="bg-mid-brown pb-5 2xl:pt-0 pt-3 2xl:px-5 px-3">
